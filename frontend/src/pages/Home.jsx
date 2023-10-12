@@ -1,5 +1,8 @@
 import React from 'react'
 import {FaArrowRight} from "react-icons/fa"
+import {AiOutlineShareAlt} from "react-icons/ai"
+import {FaRegComment} from "react-icons/fa"
+
 import {Link} from "react-router-dom"
 import HighlightText from '../components/core/HomePage/HighlightText'
 import ProductsList from '../components/core/HomePage/Productlist'
@@ -9,12 +12,24 @@ import Banner from "../assets/Images/banner.mp4"
 import epboysec1 from "../assets/Images/epboysec1.jpg"
 import epboy2sec1 from "../assets/Images/epboysec2.jpg"
 import epgirlsec1 from "../assets/Images/epgirlsec1.png"
+import homepagesec3 from "../data/HomepageSec3"
+import Homepagesec5 from "../data/Homepagesec5"
+import e1sec4 from "../assets/Images/e1sec4.jpg"
+import e2sec4 from "../assets/Images/e2sec4.jpg"
+import e3sec4 from "../assets/Images/e3sec4.jpg"
+import e4sec4 from "../assets/Images/e4sec4.jpg"
+import e5sec4 from "../assets/Images/e5sec4.jpg"
+
 import CodeBlocks from "../components/core/HomePage/CodeBlocks"
 import TimelineSection from '../components/core/HomePage/TimelineSection'
 import LearningLanguageSection from '../components/core/HomePage/LearningLanguageSection'
 import InstructorSection from '../components/core/HomePage/InstructorSection'
 import Footer from '../components/common/Footer'
 import ExploreMore from '../components/core/HomePage/ExploreMore'
+
+
+    
+
 
 const Home = () => {
   return (
@@ -159,21 +174,74 @@ const Home = () => {
            
       </div>
 
-
-
-
-
-
-
-
       {/*Section 2  */}
       
         
          <ProductsList />
 
-      
-      <div className='bg-pure-greys-5 text-richblack-700'>
-            <div className='homepage_bg h-[310px]'>
+         
+      {/*Section 3   */}
+
+
+      <div className=' ml-[1%] mr-[1%]  lg:flex lg:flex-col mt-[90px] mx-auto'>
+        <div className='lg:flex justify-between'>
+            <div className='lg:flex lg:flex-col gap-4 '>
+                     <p className='text-xs font-light text-richblack-300 '>
+                          Choose top trending items
+                     </p>
+                     <div className='font-small lg:font-[500] text-richblack-900 lg:text-3xl text-xs'>
+                          Our products
+                     </div>
+            </div>
+            <div className='flex justify-between gap-3 mt-[3%]
+            mr-[1%]'>
+                <p className=' font-small lg:font-[600] text-richblack-500  lg:text-base text-sm hover:text-richblack-900
+              hover:underline-offset-4 cursor-pointer hover:border-b-2 hover:border-richblack-900'>TOP SELLERS</p>
+                <p className='font-small lg:font-[600] text-richblack-500  lg:text-base text-sm hover:text-richblack-900
+                  underline-offset-4 cursor-pointer hover:border-b-2 hover:border-richblack-900'>TRENDING</p>
+                <p className='font-small lg:font-[600] text-richblack-500  lg:text-base text-sm hover:text-richblack-900
+                  underline-offset-4 cursor-pointer hover:border-b-2 hover:border-richblack-900'>NEW ARRIVALS</p>
+            </div>
+        </div>
+        <div className='lg:flex gap-6 cursor-pointer flex-wrap w-screen mt-[3%]'>
+            {
+
+               homepagesec3.map( (element, index) => {
+                    return (
+                        <div className='flex flex-col gap-1' key={index}>
+                         
+                            
+                                <img 
+                                src={element.img}
+
+                                className=' h-[296px] w-[246px] '
+                                />
+                           
+
+                            <div className='flex justify-between '>
+                               <div className='flex flex-col'>
+                               <p className='text-xs font-light text-richblack-300'>{element.title}</p>
+                               <p className='text-xs font-[600] text-richblack-900 
+                              '>{element.Option}</p>
+                               </div>
+                              
+                                <p className='text-richblack-900 font-[600] '>{element.rate}</p>
+                              
+                            </div>
+
+                        </div>
+                    )
+                } )
+
+               
+                //   <img 
+                //     src = {img1}
+                //     alt = "KNowYourProgressImage"
+                //     className=' h-[296px] w-[246px] '
+                //   />  
+            }
+        </div>
+            {/* <div className='homepage_bg h-[310px]'>
 
                 <div className='w-11/12 max-w-maxContent flex flex-col items-center justify-between gap-5 mx-auto'>
                     <div className='h-[150px]'></div>
@@ -224,22 +292,236 @@ const Home = () => {
 
                 <LearningLanguageSection />
 
-            </div>
+            </div> */}
 
             
 
       </div>
 
 
-      {/*Section 3 */}
-      <div className='w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
+      {/* Section4 */}
+
+       <div className=' ml-[1%] mr-[1%]   lg:flex lg:flex-col gap-6 mt-[10%] mx-auto'>
+        <div className='lg:flex lg:flex-row gap-6'>
+            <div className='cursor-pointer group'>
+            
+
+                  <img 
+                    src={e1sec4}
+                    alt="loading"
+                    className='w-[650px] h-[427px] relative group-hover:scale-95 
+                    group-hover:transition-all  group-hover:duration-100'
+                     />
+                    
+                    <div className='absolute lg:flex lg:flex-col w-3/12 
+                    lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+                      <p className='font-small lg:font-[500] 
+                      text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
+                      group-hover:transition-all  group-hover:duration-100'>
+                        CLOTHES THAT YOU LIKE
+                      </p>
+                      <p className='font-small lg:font-[500] 
+                       text-white lg:text-3xl text-xs group-hover:scale-95 
+                       group-hover:transition-all  group-hover:duration-100	'>
+                       Home Clothes And Accessories
+                      </p>
+                      <p className='font-small lg:font-[500] 
+                       text-white lg:text-xs group-hover:scale-95 
+                       group-hover:transition-all  group-hover:duration-100'>Read More</p>
+                    </div>
+                    
+            </div>
+            <div className='cursor-pointer group '>
+            
+
+            <img 
+              src={e2sec4}
+              alt="loading"
+              className='w-[650px] h-[427px] relative group-hover:scale-95 
+              group-hover:transition-all  group-hover:duration-100  '
+               />
+              
+              <div className='absolute lg:flex lg:flex-col w-4/12 
+              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+                <p className='font-small lg:font-[500] 
+                text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
+                group-hover:transition-all  group-hover:duration-100'>
+                 MODERN AND STYLISH OUTFIT
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-3xl text-xs  group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100	'>
+                The Best Women Fashion Outfits For Date
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100'>Read More</p>
+              </div>
+              
+      </div>
+            
+        </div>
+        <div className='lg:flex lg:flex-row gap-6'>
+        <div className='cursor-pointer group'>
+            
+
+            <img 
+              src={e3sec4}
+              alt="loading"
+              className='w-[427px] h-[427px] relative group-hover:scale-95 
+              group-hover:transition-all  group-hover:duration-100'
+               />
+              
+              <div className='absolute lg:flex lg:flex-col w-3/12 
+              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+                <p className='font-small lg:font-[500] 
+                text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
+                group-hover:transition-all  group-hover:duration-100'>
+                  LATEST TRENDING LOOKS
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-3xl text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100	'>
+                Holiday Deals On Fashion Clothes
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100'>Read More</p>
+              </div>
+              
+      </div>
+      <div className='cursor-pointer group'>
+            
+
+            <img 
+              src={e4sec4}
+              alt="loading"
+              className='w-[427px] h-[427px] relative group-hover:scale-95 
+              group-hover:transition-all  group-hover:duration-100'
+               />
+              
+              <div className='absolute lg:flex lg:flex-col w-3/12 
+              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+                <p className='font-small lg:font-[500] 
+                text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
+                group-hover:transition-all  group-hover:duration-100'>
+                  BEST SELLER CLOSING
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-3xl text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100	'>
+                Spring & Summer Accessories Trends
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100'>Read More</p>
+              </div>
+              
+      </div>
+      <div className='cursor-pointer group'>
+            
+
+            <img 
+              src={e5sec4}
+              alt="loading"
+              className='w-[427px] h-[427px] relative group-hover:scale-95 
+              group-hover:transition-all  group-hover:duration-100'
+               />
+              
+              <div className='absolute lg:flex lg:flex-col w-2/12 
+              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+                <p className='font-small lg:font-[500] 
+                text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
+                group-hover:transition-all  group-hover:duration-100'>
+                 СOMFORTABLE CLOTHES
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-2xl text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100	'>
+                Practical Clothes For Your Kids
+                </p>
+                <p className='font-small lg:font-[500] 
+                 text-white lg:text-xs group-hover:scale-95 
+                 group-hover:transition-all  group-hover:duration-100'>Read More</p>
+              </div>
+              
+      </div>
+        </div>
+       </div>
+
+
+
+      {/* Section 5 */}
+
+      <div className=' ml-[1%] mr-[1%]  lg:flex lg:flex-col mt-[7%] mx-auto'>
+         <div className='lg:flex justify-between'>
+            <div className='lg:flex lg:flex-col gap-4 '>
+                     <p className='text-xs font-light text-richblack-300 '>
+                     Modern and stylish outfit
+                     </p>
+                     <div className='font-small lg:font-[500] text-richblack-900 lg:text-3xl text-xs'>
+                     Latest Articles
+                     </div>
+            </div>
+            <div>
+
+            </div>
+         </div>
+         <div className='lg:flex gap-6 cursor-pointer flex-wrap w-screen mt-[3%]'>
+         {
+
+                 Homepagesec5.map( (element, index) => {
+                return (
+                    <div className='flex flex-col w-[23%] flex-wrap gap-1 relative' key={index}>
+          
+             
+                    <img 
+                      src={element.img}
+
+                      className=' h-[177px] w-[315px] '
+                      />
+               <div className='flex justify-between w-[85%] bg-white absolute  top-[49%]'>
+                <p className='p-2 text-xs font-[100] text-black'>
+                   {element.ititle}
+                </p>
+                <div className='flex gap-1 p-2  '>
+                    <AiOutlineShareAlt />
+                    <FaRegComment />
+                    <p className='text-xs'>0</p>
+                </div>
+               </div>
+
+               
+                <div className='flex flex-col mt-[10%] gap-3'>
+                <p className='text-lg font-[500] text-richblack-800'>{element.title}</p>
+                <p className='text-xs font-light text-richblack-300 
+               '>{element.Description}</p>
+                </div>
+               
+                
+               
+            
+           </div>
+             )
+           } )
+
+
+ //   <img 
+ //     src = {img1}
+ //     alt = "KNowYourProgressImage"
+ //     className=' h-[296px] w-[246px] '
+ //   />  
+}
+         </div>
+    </div>
+      {/* <div className='w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
 
             <InstructorSection />
 
             <h2 className='text-center text-4xl font-semobold mt-10'>review from Other Learners</h2>
-            {/* Review Slider here */}
             
-      </div>
+            
+      </div> */}
 
 
       {/*Footer */}
