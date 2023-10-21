@@ -3,8 +3,10 @@ import axios from 'axios';
 class ProductDataService{
     getAll()
     {
-        return axios(`http://localhost:8000/api/v1/products`);
+        return axios.get(`http://localhost:8000/api/v1/products`);
     }
 }
 
-export default new ProductDataService();
+const ProducDataService = new ProductDataService();
+
+export default ProducDataService;
