@@ -1,27 +1,33 @@
 import ProductDataService from "../../../services/Product";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-const ProductsList = props => {
+function ProductsList (props)
+{
     const [products, setProducts] = useState([]);
-    const [Productlist, setProductlist] = useState("false");
-   
-    useEffect(() =>{
-        retrieveProducts()
-    }, [])
+    let ignore = useRef(false);
 
-    const retrieveProducts = () => {
-        ProductDataService.getAll() 
-        .then(response => {
-            console.log(response.data);
-            setProducts(response.data.products);
-        })
-        .catch( e =>{
-            console.log(e);
-        });
-    }
+    useEffect(() =>{
+    
+        if(!ignore.current)
+        {
+            ProductDataService.getAll() 
+            .then(response => {
+                console.log(response.data);
+                setProducts(response.data.products);
+            })
+            .catch( e =>{
+                console.log(e);
+            });
+        }
+
+        return () => {
+            ignore.current = true;
+        }
+
+    }, []);
      
     const prodname = [
         {
@@ -46,8 +52,6 @@ const ProductsList = props => {
         },
     ];
      
-
-
     return (
         
         <Row xs={2} sm={3} md={4} className=" ml-[1%] mr-[2%] lg:flex mt-[10px] mx-auto ">
@@ -55,7 +59,7 @@ const ProductsList = props => {
               products.map(product => (
                 
                 <Col  className="   cursor-pointer "  key={product._id}>
-                   { 
+                { 
                     <Card className="relative border-2 rounded-md border-slate-300 flex gap-2 group">
                 
                         
@@ -86,12 +90,12 @@ const ProductsList = props => {
                         </Card.Body> */}
                     
                     </Card>
-}
+                }
                 </Col>
                     
             ))
             
-                    }
+            }
                     
         </Row>
         
