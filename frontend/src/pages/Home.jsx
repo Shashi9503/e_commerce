@@ -300,7 +300,7 @@ const Home = () => {
       </div>
 
     
-      {/* Section4 */}
+      {/* Section 4 */}
 
        <div className=' ml-[1%] mr-[1%]   flex flex-col gap-6 mt-[10%] mx-auto'>
         <div className='lg:flex lg:flex-row    lg:gap-6 ml-[1%] mr-[1%]'>
@@ -474,12 +474,12 @@ const Home = () => {
 
             </div>
          </div>
-         <div className='lg:flex gap-6 cursor-pointer flex-wrap w-screen mt-[3%]'>
+         <div className='flex gap-2 cursor-pointer flex-wrap  mt-[3%]'>
          {
 
                  Homepagesec5.map( (element, index) => {
                 return (
-                    <div className='flex flex-col w-[23%] flex-wrap gap-1 relative' key={index}>
+                    <div className='flex flex-col w-[315px] flex-wrap gap-1 relative mx-auto' key={index}>
           
              
                     <img 
