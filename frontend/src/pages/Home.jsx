@@ -6,7 +6,8 @@ import {FaRegComment} from "react-icons/fa"
 import {Link} from "react-router-dom"
 import HighlightText from '../components/core/HomePage/HighlightText'
 import ProductsList from '../components/core/HomePage/Productlist'
-
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import CTAButton from "../components/core/HomePage/Button"
 import Banner from "../assets/Images/banner.mp4"
 import epboysec1 from "../assets/Images/epboysec1.jpg"
@@ -182,9 +183,9 @@ const Home = () => {
          
       {/*Section 3   */}
 
-
-      <div className=' ml-[1%] mr-[1%]  lg:flex lg:flex-col mt-[90px] mx-auto'>
-        <div className='lg:flex justify-between'>
+     
+      <div className=' ml-[1%] mr-[1%]  flex flex-col mt-[90px] mx-auto'>
+        <div className='lg:flex lg:justify-between md:ustify-between '>
             <div className='lg:flex lg:flex-col gap-4 '>
                      <p className='text-xs font-light text-richblack-300 '>
                           Choose top trending items
@@ -193,7 +194,7 @@ const Home = () => {
                           Our products
                      </div>
             </div>
-            <div className='flex justify-between gap-3 mt-[3%]
+            <div className='   flex  justify-between   lg:gap-2 gap-1 mt-[3%]
             mr-[1%]'>
                 <p className=' font-small lg:font-[600] text-richblack-500  lg:text-base text-sm hover:text-richblack-900
               hover:underline-offset-4 cursor-pointer hover:border-b-2 hover:border-richblack-900'>TOP SELLERS</p>
@@ -203,22 +204,22 @@ const Home = () => {
                   underline-offset-4 cursor-pointer hover:border-b-2 hover:border-richblack-900'>NEW ARRIVALS</p>
             </div>
         </div>
-        <div className='lg:flex gap-6 cursor-pointer flex-wrap w-screen mt-[3%]'>
+        <div className='flex gap-6 cursor-pointer  flex-wrap  mt-[3%]'>
             {
 
                homepagesec3.map( (element, index) => {
                     return (
-                        <div className='flex flex-col gap-1' key={index}>
+                        <div className='lg:flex  lg:w-fit lg:flex-col md:w-[170px] w-[170px]  gap-1' key={index}>
                          
                             
                                 <img 
                                 src={element.img}
 
-                                className=' h-[296px] w-[246px] '
+                                className=' lg:h-[296px] lg:w-[246px] md:w-[170px] md:h-[202.86px] w-[170px] h-[202.86px] '
                                 />
                            
 
-                            <div className='flex justify-between '>
+                            <div className='flex justify-between w-[100%] '>
                                <div className='flex flex-col'>
                                <p className='text-xs font-light text-richblack-300'>{element.title}</p>
                                <p className='text-xs font-[600] text-richblack-900 
@@ -298,30 +299,32 @@ const Home = () => {
 
       </div>
 
-
+    
       {/* Section4 */}
 
-       <div className=' ml-[1%] mr-[1%]   lg:flex lg:flex-col gap-6 mt-[10%] mx-auto'>
-        <div className='lg:flex lg:flex-row gap-6'>
+       <div className=' ml-[1%] mr-[1%]   flex flex-col gap-6 mt-[10%] mx-auto'>
+        <div className='lg:flex lg:flex-row    lg:gap-6 ml-[1%] mr-[1%]'>
             <div className='cursor-pointer group'>
             
 
                   <img 
                     src={e1sec4}
                     alt="loading"
-                    className='w-[650px] h-[427px] relative group-hover:scale-95 
+                    className='lg:w-[650px] lg:h-[427px] h-[237px] w-[360px] mx-auto lg:relative relative mb-[3%] group-hover:scale-95 
                     group-hover:transition-all  group-hover:duration-100'
                      />
                     
-                    <div className='absolute lg:flex lg:flex-col w-3/12 
-                    lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
-                      <p className='font-small lg:font-[500] 
-                      text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
+                    <div className='lg:absolute absolute lg:flex lg:flex-col md:w-3/12 h-[154px] w-[300px]
+
+                    lg:translate-y-[-270%] lg:translate-x-[5%] translate-x-[5%] translate-y-[-152%] lg:gap-4
+                    flex flex-col gap-4 ml-[2%]'>
+                      <p className='md:font-small md:font-[500] text-[rgba(255,255,255,.6)] 
+                      md:text-[rgba(255,255,255,.6)]  md:leading-6	 md:text-base group-hover:scale-95 
                       group-hover:transition-all  group-hover:duration-100'>
                         CLOTHES THAT YOU LIKE
                       </p>
-                      <p className='font-small lg:font-[500] 
-                       text-white lg:text-3xl text-xs group-hover:scale-95 
+                      <p className='font-small lg:font-[500] font-[500] text-xl
+                       text-white lg:text-3xl  group-hover:scale-95 
                        group-hover:transition-all  group-hover:duration-100	'>
                        Home Clothes And Accessories
                       </p>
@@ -337,20 +340,21 @@ const Home = () => {
             <img 
               src={e2sec4}
               alt="loading"
-              className='w-[650px] h-[427px] relative group-hover:scale-95 
-              group-hover:transition-all  group-hover:duration-100  '
+              className='lg:w-[650px] lg:h-[427px] h-[237px] w-[360px] lg:relative relative mb-[3%] mx-auto group-hover:scale-95 
+              group-hover:transition-all  group-hover:duration-100'
                />
               
-              <div className='absolute lg:flex lg:flex-col w-4/12 
-              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
-                <p className='font-small lg:font-[500] 
-                text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
-                group-hover:transition-all  group-hover:duration-100'>
+              <div className='lg:absolute absolute lg:flex lg:flex-col md:w-3/12 h-[154px] w-[300px]
+              lg:translate-y-[-270%] lg:translate-x-[5%] translate-x-[5%]  translate-y-[-152%] lg:gap-4
+              flex flex-col gap-4 ml-[2%]'>
+                <p className='md:font-small md:font-[500] text-[rgba(255,255,255,.6)] 
+                      md:text-[rgba(255,255,255,.6)]  md:leading-6	 md:text-base group-hover:scale-95 
+                      group-hover:transition-all  group-hover:duration-100'>
                  MODERN AND STYLISH OUTFIT
                 </p>
-                <p className='font-small lg:font-[500] 
-                 text-white lg:text-3xl text-xs  group-hover:scale-95 
-                 group-hover:transition-all  group-hover:duration-100	'>
+                <p className='font-small lg:font-[500] font-[500] text-xl
+                       text-white lg:text-3xl  group-hover:scale-95 
+                       group-hover:transition-all  group-hover:duration-100	'>
                 The Best Women Fashion Outfits For Date
                 </p>
                 <p className='font-small lg:font-[500] 
@@ -368,19 +372,20 @@ const Home = () => {
             <img 
               src={e3sec4}
               alt="loading"
-              className='w-[427px] h-[427px] relative group-hover:scale-95 
+              className='lg:w-[427px] lg:h-[427px] h-[237px] w-[360px] mb-[3%] mx-auto relative group-hover:scale-95 
               group-hover:transition-all  group-hover:duration-100'
                />
               
-              <div className='absolute lg:flex lg:flex-col w-3/12 
-              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+              <div className='lg:absolute absolute lg:flex lg:flex-col w-3/12 
+              lg:translate-y-[-250%] lg:translate-x-[5%] translate-x-[5%]  translate-y-[-138%] lg:gap-4  flex flex-col gap-4 ml-[2%]
+              h-[170px] w-[300px]'>
                 <p className='font-small lg:font-[500] 
                 text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
                 group-hover:transition-all  group-hover:duration-100'>
                   LATEST TRENDING LOOKS
                 </p>
                 <p className='font-small lg:font-[500] 
-                 text-white lg:text-3xl text-xs group-hover:scale-95 
+                 text-white lg:text-3xl text-xl group-hover:scale-95 
                  group-hover:transition-all  group-hover:duration-100	'>
                 Holiday Deals On Fashion Clothes
                 </p>
@@ -396,19 +401,20 @@ const Home = () => {
             <img 
               src={e4sec4}
               alt="loading"
-              className='w-[427px] h-[427px] relative group-hover:scale-95 
+              className='lg:w-[427px] lg:h-[427px] h-[237px] w-[360px] mb-[3%] mx-auto relative group-hover:scale-95 
               group-hover:transition-all  group-hover:duration-100'
                />
               
-              <div className='absolute lg:flex lg:flex-col w-3/12 
-              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+              <div className='lg:absolute absolute lg:flex lg:flex-col w-3/12 
+              lg:translate-y-[-250%] lg:translate-x-[5%] translate-x-[5%]  translate-y-[-138%] lg:gap-4  flex flex-col gap-4 ml-[2%]
+              h-[170px] w-[300px]'>
                 <p className='font-small lg:font-[500] 
                 text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
                 group-hover:transition-all  group-hover:duration-100'>
                   BEST SELLER CLOSING
                 </p>
                 <p className='font-small lg:font-[500] 
-                 text-white lg:text-3xl text-xs group-hover:scale-95 
+                 text-white lg:text-3xl text-xl group-hover:scale-95 
                  group-hover:transition-all  group-hover:duration-100	'>
                 Spring & Summer Accessories Trends
                 </p>
@@ -424,19 +430,20 @@ const Home = () => {
             <img 
               src={e5sec4}
               alt="loading"
-              className='w-[427px] h-[427px] relative group-hover:scale-95 
+              className='lg:w-[427px] lg:h-[427px] h-[237px] w-[360px] mb-[3%] mx-auto relative group-hover:scale-95 
               group-hover:transition-all  group-hover:duration-100'
                />
               
-              <div className='absolute lg:flex lg:flex-col w-2/12 
-              lg:translate-y-[-270%] lg:translate-x-[5%] gap-4'>
+              <div className='lg:absolute absolute lg:flex lg:flex-col w-3/12 
+              lg:translate-y-[-250%] lg:translate-x-[5%] translate-x-[5%]  translate-y-[-138%] lg:gap-4  flex flex-col gap-4 ml-[2%]
+              h-[170px] w-[300px]'>
                 <p className='font-small lg:font-[500] 
                 text-[rgba(255,255,255,.6)]  leading-6	 lg:text-base group-hover:scale-95 
                 group-hover:transition-all  group-hover:duration-100'>
                  СOMFORTABLE CLOTHES
                 </p>
                 <p className='font-small lg:font-[500] 
-                 text-white lg:text-2xl text-xs group-hover:scale-95 
+                 text-white lg:text-2xl text-xl group-hover:scale-95 
                  group-hover:transition-all  group-hover:duration-100	'>
                 Practical Clothes For Your Kids
                 </p>
@@ -513,7 +520,7 @@ const Home = () => {
  //   />  
 }
          </div>
-    </div>
+      </div>
       {/* <div className='w-11/12 mx-auto max-w-maxContent flex-col items-center justify-between gap-8 first-letter bg-richblack-900 text-white'>
 
             <InstructorSection />
